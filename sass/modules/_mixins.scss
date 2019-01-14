@@ -1,0 +1,423 @@
+
+
+/*	==========================================================================
+	Table of Contents For Mixins:
+
+		#Helper
+			*mv-prefixer
+			*mv-border
+			*mv-border-radius
+			*mv-size
+			*mv-clean
+			*mv-position
+				*absolute
+				*relative
+				*fixed
+			*mv-cover
+			*mv-center-block
+			*mv-center
+			*mv-vert-center
+			*mv-align
+			*mv-transform
+			*mv-placeholder-color
+			*animation
+			*keyframes
+			*mv-media
+		#Headings
+			*mv-primary-heading
+		#Text
+			*mv-primary-text
+		#Button
+			*mv-primary-button
+		#Textfield
+			*mv-primary-textfield
+		#Textarea
+			*mv-primary-textarea
+		#Selectbox
+			*mv-primary-selectbox
+	========================================================================== */
+
+/*	=========================== #mv-prefixer ================================= */
+
+	@mixin mv-prefixer($property, $value, $prefixes) {
+		@each $prefix in $prefixes {
+			@if $prefix == webkit {
+				-webkit-#{$property}: #{$value};
+			}
+			@else if $prefix == moz {
+				-moz-#{$property}: #{$value};
+			}
+			@else if $prefix == ms {
+				-ms-#{$property}: #{$value};
+			}
+			@else if $prefix == o {
+				-o-#{$property}: #{$value};
+			}
+			@else if $prefix == spec {
+				#{$property}: #{$value};
+			}
+			@else  {
+				@warn "Unrecognized prefix: #{$prefix}";
+			}
+		}
+	}
+
+/*	=========================== #mv-border =================================== */
+
+	@mixin mv-border($border-width: 1px, $border-type: solid, $border-color: mv-random-color()) {
+		border: $border-width $border-type $border-color;
+	}
+
+/*	=========================== #mv-border-radius ============================ */
+
+	@mixin border-top-radius($radius: $border-radius-default) {
+		border-top-right-radius: $radius;
+		border-top-left-radius: $radius;
+	}
+
+	@mixin border-right-radius($radius: $border-radius-default) {
+		border-top-right-radius: $radius;
+		border-bottom-right-radius: $radius;
+	}
+
+	@mixin border-bottom-radius($radius: $border-radius-default) {
+		border-bottom-right-radius: $radius;
+		border-bottom-left-radius: $radius;
+	}
+
+	@mixin border-left-radius($radius: $border-radius-default) {
+		border-top-left-radius: $radius;
+		border-bottom-left-radius: $radius;
+	}
+
+/*	=========================== #mv-size ===================================== */
+
+	@mixin mv-size($width: 200px, $height: 200px) {
+		width: $width;
+		height: $height;
+	}
+
+/*	=========================== #mv-clean ==================================== */
+
+	@mixin mv-clean() {
+		margin: 0;
+		padding: 0;
+	}
+
+/*	=========================== #mv-position ================================= */
+
+	@mixin mv-position($type, $top: $position-default, $right: $position-default, $bottom: $position-default, $left: $position-default) {
+		position: $type;
+		$allowed_types: absolute relative fixed;
+		@if not index($allowed_types, $type) {
+			@warn "Unknown position: #{$type}.";
+		}
+		@each $data in top $top, right $right, bottom $bottom, left $left {
+			#{nth($data, 1)}: nth($data, 2);
+		}
+	}
+
+	@mixin absolute($top: $position-default, $right: $position-default, $bottom: $position-default, $left: $position-default) {
+		@include mv-position(absolute, $top, $right, $bottom, $left);
+	}
+
+	@mixin relative($top: $position-default, $right: $position-default, $bottom: $position-default, $left: $position-default) {
+		@include mv-position(relative, $top, $right, $bottom, $left);
+	}
+
+	@mixin fixed($top: $position-default, $right: $position-default, $bottom: $position-default, $left: $position-default) {
+		@include mv-position(fixed, $top, $right, $bottom, $left);
+	}
+
+/*	=========================== #mv-cover ==================================== */
+
+	@mixin mv-cover() {
+		@include absolute(0, null, null, 0);
+		@include mv-size(100%, 100%);
+	}
+
+/*	=========================== #mv-center-block ============================= */
+
+	@mixin mv-center-block() {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+/*	=========================== #mv-center =================================== */
+
+	@mixin mv-center() {
+		@include absolute(50%,null,null,50%);
+			@if $browser-prefixes {
+			@include mv-prefixer(transform, translate(-50%,-50%), webkit moz ms o spec);
+		}
+		@else {
+			transform: translate(-50%,-50%);
+		}
+	}
+
+/*	=========================== #mv-vert-center ============================== */
+
+	@mixin mv-vert-center() {
+		@include relative(50%);
+		@if $browser-prefixes {
+			@include mv-prefixer(transform, translateY(-50%), webkit moz ms o spec);
+		}
+		@else {
+			transform: translateY(-50%);
+		}
+	}
+
+/*	=========================== #mv-align =============================== */
+
+	@mixin mv-align($align-container: inner-align-container, $align-position: middle) {
+		display: table;
+		width: 100%;
+		height: 100%;
+		.#{$align-container}{
+			display: table-cell;
+			vertical-align: $align-position;
+		}
+	}
+
+/*	=========================== #mv-transform ================================ */
+
+	@mixin mv-transform($property, $value) {
+		@if $browser-prefixes {
+			@include mv-prefixer(transform, #{$property}unquote("(")#{$value}unquote(")"), webkit moz ms o spec);
+		}
+		@else {
+			transform: #{$property}unquote("(")#{$value}unquote(")");
+		}
+	}
+
+	@mixin rotate($deg) {
+		@include mv-transform(rotate, $deg);
+	}
+	
+	@mixin rotateX($deg) {
+		@include mv-transform(rotateX, $deg);
+	}
+
+	@mixin rotateY($deg) {
+		@include mv-transform(rotateY, $deg);
+	}
+
+	@mixin rotateZ($deg) {
+		@include mv-transform(rotateZ, $deg);
+	}
+
+	@mixin rotate3d($x, $y, $z, $deg) {
+		$multi-var: $x, $y, $z, $deg;
+		@include mv-transform(rotate3d, $multi-var);
+	}
+
+	@mixin scale($ratio) {
+		@include mv-transform(scale, $ratio);
+	}
+
+	@mixin scaleX($ratio) {
+		@include mv-transform(scaleX, $ratio);
+	}
+
+	@mixin scaleY($ratio) {
+		@include mv-transform(scaleY, $ratio);
+	}
+
+	@mixin scaleZ($ratio) {
+		@include mv-transform(scaleZ, $ratio);
+	}
+
+	@mixin scale3d($x, $y, $z) {
+		$multi-var: $x, $y, $z;
+		@include mv-transform(scale3d, $multi-var);
+	}
+
+	@mixin skew($x, $y) {
+		$multi-var: $x, $y;
+		@include mv-transform(skew, $multi-var);
+		backface-visibility: hidden;
+	}
+
+	@mixin skewX($deg) {
+		@include mv-transform(skewX, $deg);
+		backface-visibility: hidden;
+	}
+
+	@mixin skewY($deg) {
+		@include mv-transform(skewY, $deg);
+		backface-visibility: hidden;
+	}
+	
+	@mixin translate($x, $y) {
+		$multi-var: $x, $y;
+		@include mv-transform(translate, $multi-var);
+	}
+
+	@mixin translateX($x) {
+		@include mv-transform(translateX, $x);
+	}
+
+	@mixin translateY($y) {
+		@include mv-transform(translateY, $y);
+	}
+
+	@mixin translateZ($z) {
+		@include mv-transform(translateZ, $z);
+	}
+
+	@mixin translate3d($x, $y, $z) {
+		$multi-var: $x, $y, $z;
+		@include mv-transform(translate3d, $multi-var);
+	}
+
+/*	=========================== #mv-placeholder-color ======================== */
+
+	@mixin mv-placeholder-color($color: $placeholder-color-default) {
+		@if $browser-prefixes {
+			&::-webkit-input-placeholder {
+				color: $color;
+			}
+			&::-moz-placeholder {
+				color: $color;
+			}
+			&::-ms-input-placeholder {
+				color: $color;
+			}
+			&::placeholder {
+				color: $color;
+			}
+		}
+		@else {
+			&::placeholder {
+				color: $color;
+			}
+		}
+	}
+
+/*	=========================== #animation =================================== */
+
+	@mixin animation($animation) {
+		@include mv-prefixer(animation, $animation, webkit spec);
+	}
+
+/*	=========================== #keyframes =================================== */
+
+	@mixin keyframes($name) {
+		@-webkit-keyframes #{$name} {
+			@content;
+		}
+		@keyframes #{$name} {
+			@content;
+		}
+	}
+
+/*	=========================== #mv-media ======================================= */
+
+	@mixin mv-media($break, $viewport1: null) {
+		// preset breakpoint
+		@if not $viewport1 {
+			@if map-has-key($breakpoints, $break) {
+				@media only screen and #{map-get($breakpoints, $break)} { @content; }
+			}
+			@else {
+				@warn "Couldn't find a breakpoint named #{$break}.";
+			}
+		}
+		@else {
+			// min breakpoint
+			@if $break == min {
+				@media screen and (min-width: $viewport1) { @content; }
+			}
+			// max breakpoint
+			@else if $break == max {
+				@media screen and (max-width: $viewport1) { @content; }
+			}
+			// min & max breakpoint
+			@else {
+				@media screen and (min-width: $break) and (max-width: $viewport1) { @content; }
+			}
+		}
+	}
+
+/*	=========================== #mv-primary-heading ============================= */
+
+	@mixin mv-primary-heading($font-text: $font-primary-heading, $color-text: $color-primary-heading) {
+		font: $font-text;
+		color: $color-text;
+		display: inline-block;
+		line-height: 1.5em;
+		letter-spacing: 5px;
+		word-spacing: normal;
+		margin: 0 0 20px 0;
+		transition: 0.5s all ease 0s;
+
+		&:before{
+			content: '';
+			display: inline-block;
+			width: 100px;
+			height: 0px;
+			vertical-align: middle;
+			border-bottom: 1px solid red;
+			transition: 0.5s all ease 0s;
+		}
+
+		&:after{
+			content: '';
+			display: inline-block;
+			width: 100px;
+			height: 0px;
+			vertical-align: middle;
+			border-bottom: 1px solid red;
+			transition: 0.5s all ease 0s;
+		}
+
+		&:hover{
+
+			&:before{
+				width: 150px;
+			}
+
+			&:after{
+				width: 150px;
+			}
+
+		}
+
+	}
+
+/*	=========================== #mv-primary-text ================================ */
+
+	@mixin mv-primary-text() {
+		
+	}
+
+
+/*	=========================== #mv-primary-button ============================== */
+
+	@mixin mv-primary-button() {
+		
+	}
+
+
+/*	=========================== #mv-primary-textfield =========================== */
+
+	@mixin mv-primary-textfield() {
+		box-sizing: border-box;
+	}
+
+
+/*	=========================== #mv-primary-textarea ============================ */
+
+	@mixin mv-primary-textarea() {
+		box-sizing: border-box;
+	}
+
+
+/*	=========================== #mv-primary-selectbox =========================== */
+
+	@mixin mv-primary-selectbox() {
+		box-sizing: border-box;
+	}
+
+/*	=========================== #mv-end ========================================= */

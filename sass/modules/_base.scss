@@ -1,0 +1,138 @@
+/*	==========================================================================
+	Table of Contents For Base:
+	    #Font Setting
+		#html, body
+		#Horizontal Space
+		    *h-small-space
+		    *h-medium-space
+		    *h-large-space
+		#Top-align
+		#Vertical-align
+		#Bottom-align
+		#Responsive Grid
+		#TextField
+		#TextArea
+		#SelectBox
+	========================================================================== */
+
+/*	==========================================================================
+		#Font Setting
+	========================================================================== */
+
+
+/*	==========================================================================
+		#html,body
+	========================================================================== */
+
+	// html{
+	// 	height: 100%;
+	// 	background-color: $color-white;
+	// 	body{
+	// 		height:100%;
+	// 		background-color: green;
+	// 	}
+	// }
+
+/*	==========================================================================
+		#Horizontal Space
+	========================================================================== */
+
+    .h-small-space{
+        height: $height-small-space;
+    }
+
+    .h-medium-space{
+        height: $height-medium-space;
+    }
+
+    .h-large-space{
+        height: $height-large-space;
+    }
+
+/*	==========================================================================
+		#Top-align
+	========================================================================== */
+
+	.top-align-container{
+		@include mv-align(inner-talign-container, top);
+	}
+
+
+/*	==========================================================================
+		#Vertical-align
+	========================================================================== */
+	
+    .vertical-align-container{
+        @include mv-align(inner-valign-container, middle);
+    }
+
+/*	==========================================================================
+		#Bottom-align
+	========================================================================== */
+
+	.bottom-align-container{
+		@include mv-align(inner-balign-container, bottom);
+	}
+
+/*	==========================================================================
+		#Responsive Grid
+	========================================================================== */
+
+	.grid-container{
+		@include mv-border;
+		box-sizing: border-box;
+		width: 100%;
+		&:after{
+			content: "";
+			clear: both;
+			display: block;
+		}
+		.grid{
+			box-sizing: border-box;
+			width: (100%/3);
+			float: left;
+			height: 50px;
+			@include mv-border;
+			padding: 0 30px;
+			@include mv-media(max, 600px){
+				width: 100%;
+				padding-bottom: 30px;
+			};
+		}
+	}
+
+/*	==========================================================================
+		#TextField
+	========================================================================== */
+
+	input[type="text"]{
+		box-sizing: border-box;
+	}
+
+/*	==========================================================================
+		#TextArea
+	========================================================================== */
+
+	textarea{
+		box-sizing: border-box;
+	}
+
+/*	==========================================================================
+		#SelectBox
+	========================================================================== */
+
+	select{
+		box-sizing: border-box;
+	}
+
+    .btn{
+        background: transparent;
+        font-size: 14px;
+//        font-family: "$font;
+        color: #252628;
+        border: 1px solid #504a2f;
+//        text-transform: uppercase;
+        padding: 6px 20px;
+        border-radius: 0;
+//        letter-spacing: 3px;
+    }

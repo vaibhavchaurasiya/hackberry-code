@@ -1,0 +1,1143 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    box-sizing: border-box;
+}
+
+#index {
+
+    .section-bgbannar {
+        .full-bg {
+            padding: 0;
+
+            .bannar-img {
+                display: inline-block;
+                position: relative;
+
+                .bannar-octopus {
+                    position: absolute;
+                    top: 50%;
+                    right: 5%;
+                    animation-name: octopus;
+                    animation-duration: 10s;
+                    animation-iteration-count: 1000;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+
+                    @include mv-media(max, 767px) {
+
+                        width: 26%;
+
+                    }
+
+                    @include mv-media(768px, 992px) {
+                        width: 26%;
+                    }
+
+
+                }
+
+                .bannar-text {
+
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(-50%, -50%);
+
+                    @include mv-media (max, 767px) {
+                        .bannar-text {
+                            height: 85px;
+                        }
+                    }
+
+                    h2 {
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 40px;
+                        text-transform: capitalize;
+
+                        @include mv-media(max, 767px) {
+
+                            font-size: 14px;
+
+                        }
+
+                        @include mv-media(768px, 992px) {
+                            font-size: 28px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .section-sliderheading {
+
+        background-image: url(../img/background1.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 700PX;
+        POSITION: RELATIVE;
+        margin-top: -60px;
+        z-index: -1;
+        width: 100%;
+
+        @include mv-media(max, 767px) {
+
+            height: 320px;
+
+        }
+
+        @include mv-media(768px, 992px) {
+            height: 500px;
+        }
+
+        .cloud1 {
+            margin-top: 30%;
+
+            @include mv-media(max, 767px) {
+
+                position: relative;
+                top: 20px;
+
+            }
+
+
+            .bigcloud1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .smallcloud1 {
+
+                position: absolute;
+
+                top: 40%;
+                left: 65%;
+                transform: translate(-50%, -50%);
+                animation-name: smallcloud1;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: linear;
+            }
+
+            .smalloctopus1 {
+
+                position: absolute;
+                top: 50%;
+                left: 44%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                animation-name: smalloctopus1;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: linear;
+            }
+
+            .gallery-text {
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                h3 {
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 600;
+                    color: #fff;
+                    font-size: 40px;
+                    padding-top: 20%;
+
+                    @include mv-media(max, 767px) {
+
+                        font-size: 20px;
+
+                    }
+
+                    @include mv-media(768px, 992px) {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .section-slidermain {
+        margin-top: -35%;
+    }
+
+    .section-video {
+        margin-top: 3%;
+
+        .video-heading {
+            padding: 130px 55px;
+
+
+
+            p {
+                font-family: 'Montserrat', sans-serif;
+                text-align: justify;
+                font-size: 18px;
+                line-height: 1.5rem;
+            }
+
+            @include mv-media(max, 767px) {
+
+                padding: 20px 0px;
+
+
+            }
+        }
+
+        .video-image {
+            position: relative;
+
+            @include mv-media(max, 767px) {
+
+                margin: 40px 0px;
+
+
+            }
+
+            .video-logo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    //testimonial
+    .testimonial {
+
+        background-image: url("../img/background2.png");
+        background-repeat: no-repeat;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+
+        .row {
+            margin: 8%;
+
+            .cloud2 {
+                position: relative;
+
+                .bigcloud2 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+
+                .smallcloud2 {
+                    position: absolute;
+                    top: -20px;
+                    left: 35%;
+                    transform: translate(0%, -50%);
+                    animation-name: smallcloud2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+                }
+
+                .smalloctopus2 {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(150%, -40%);
+                    animation-name: smalloctopus2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+
+
+                }
+
+                .cloudtext2 {
+                    position: absolute;
+                    top: 20px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 3;
+
+                    h4 {
+                        font-family: 'Montserrat', sans-serif;
+                        color: #f05067;
+                        font-weight: 900;
+                        margin: 0;
+                        padding-top: 15%;
+                        text-transform: capitalize;
+
+                    }
+                }
+            }
+        }
+
+        .testimonial-row {
+
+            .testimonial-text {
+                //                margin: 10%;
+
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1.2rem;
+                    color: white;
+                    text-align: justify;
+                    font-weight: 300;
+                    line-height: 2.2rem;
+                    margin-top: 5%;
+
+                }
+
+                p::after {
+                    content: "\f10d";
+                    font-family: FontAwesome;
+
+                }
+
+                p::before {
+                    content: "\f10d";
+                    font-family: FontAwesome;
+                }
+
+                .figure-caption {
+                    font-size: 1.5rem;
+                    color: white;
+                    font-weight: 300;
+                }
+            }
+
+            .owl-dots {
+                margin-top: 10%;
+            }
+        }
+
+    }
+
+    //courses
+    .courses {
+
+        .row {
+            margin: 6%;
+
+            .cloud2 {
+                position: relative;
+
+                .bigcloud2 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+
+                .smallcloud2 {
+                    position: absolute;
+                    top: -20px;
+                    left: 35%;
+                    transform: translate(0%, -50%);
+                    animation-name: smallcloud2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+                }
+
+                .smalloctopus2 {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(150%, -40%);
+                    animation-name: smalloctopus2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+
+
+                }
+
+                .cloudtext2 {
+                    font-family: 'Montserrat', sans-serif;
+                    position: absolute;
+                    top: 20px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 3;
+
+                    h4 {
+                        color: #fff;
+                        font-weight: 900;
+                        margin: 0;
+                        text-transform: capitalize;
+
+
+                    }
+                }
+            }
+        }
+
+        .courses-row {
+
+            .courses-text {
+
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1.4rem;
+                    color: #000;
+                    color: #000;
+                    text-align: justify;
+                    font-weight: 300;
+                    line-height: 2.2rem;
+
+                }
+
+            }
+
+        }
+
+        .row {
+            //            margin: 6%;
+
+            .cloud2 {
+                position: relative;
+
+                .bigcloud2 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+
+                .smallcloud2 {
+                    position: absolute;
+                    top: -20px;
+                    left: 35%;
+                    transform: translate(0%, -50%);
+                    animation-name: smallcloud2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+                }
+
+                .smalloctopus2 {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(150%, -40%);
+                    animation-name: smalloctopus2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+
+
+                }
+
+                .cloudtext2 {
+                    font-family: 'Montserrat', sans-serif;
+                    position: absolute;
+                    top: 20px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 3;
+
+                    h4 {
+                        color: #fff;
+                        font-weight: 900;
+                        margin: 0;
+                        text-transform: capitalize;
+
+
+                    }
+                }
+            }
+        }
+
+        .courses-row {
+
+            .courses-text {
+                margin: 30px auto;
+
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1.4rem;
+                    color: #000;
+                    color: #000;
+                    text-align: justify;
+                    font-weight: 300;
+                    line-height: 2.2rem;
+
+                }
+
+            }
+
+        }
+
+        .row {
+            margin: 6%;
+
+            .cloud2 {
+                position: relative;
+
+                .bigcloud2 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+
+                .smallcloud2 {
+                    position: absolute;
+                    top: -20px;
+                    left: 35%;
+                    transform: translate(0%, -50%);
+                    animation-name: smallcloud2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+                }
+
+                .smalloctopus2 {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(150%, -40%);
+                    animation-name: smalloctopus2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+
+
+                }
+
+                .cloudtext2 {
+                    font-family: 'Montserrat', sans-serif;
+                    position: absolute;
+                    top: 20px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 3;
+
+                    h4 {
+                        color: #fff;
+                        font-weight: 900;
+                        margin: 0;
+                        text-transform: capitalize;
+
+
+                    }
+                }
+            }
+        }
+
+        .courses-row {
+
+            .courses-text {
+
+                p {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1.2rem;
+                    color: #000;
+                    color: #000;
+                    text-align: justify;
+                    font-weight: 300;
+                    line-height: 2.2rem;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    //codding concept
+    .coding-concept {
+
+
+        .container {
+            border: 3px solid #54a90b;
+            border-top-color: #bcf105;
+            border-left-color: #bcf155;
+            border-right-color: #bcf155;
+
+            padding: 40px;
+            border-radius: 200px;
+
+            .row {
+
+                .coding-concept-circle {
+                    .greencircle {
+                        position: relative;
+                        animation-timing-function: linear;
+                        animation-name: greenrotate;
+                        animation-duration: 10s;
+                        animation-iteration-count: infinite;
+                    }
+
+                    .yellowcircle {
+                        position: absolute;
+                        bottom: 0px;
+                        right: -50px;
+
+                    }
+
+                    .head-text {
+                        position: absolute;
+                        text-align: center;
+                        top: 40%;
+                        left: 72%;
+                        transform: translate(-50%, -50%);
+                        color: #fff;
+
+                        h3 {
+                            font-size: 35px;
+                        }
+
+                        p {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .col-sm-10 {
+                    padding: 3% 0px 0px 9%;
+                    font-size: 18px;
+                    line-height: 1.6rem;
+                    word-spacing: 0.2rem;
+
+                    .coding-concept-text {
+                        p {}
+                    }
+
+                    .row {
+                        margin-top: 2%;
+
+                        .sub-concept {
+                            font-size: 1.4rem;
+                            color: #198307;
+                            text-align: left;
+                        }
+
+                        .row {
+                            margin-top: 2%;
+
+                            .Courses-box1 {
+
+                                .Courses-par1 {
+                                    text-transform: capitalize;
+
+                                }
+
+                                .Courses-par2 {
+                                    text-align: center;
+                                }
+
+                            }
+
+                            .Courses-box1:not(.Courses-box2)::after {
+                                content: " ";
+                                position: absolute;
+                                height: 57px;
+                                color: #198307;
+                                border: 2px solid;
+                                top: 0px;
+                                right: 0px;
+                                margin: 0px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //intro-coding
+    .intro-coding {
+        margin: 50px 0px;
+
+        .container {
+            border: 3px solid #119ee6;
+            border-top-color: #54f3fc;
+            border-left-color: #54f3fc;
+            border-right-color: #54f3fc;
+            padding: 40px;
+            border-radius: 200px;
+
+            .row {
+
+                .coding-concept-circle {
+                    .greencircle {
+                        position: relative;
+                        animation-timing-function: linear;
+                        animation-name: greenrotate;
+                        animation-duration: 10s;
+                        animation-iteration-count: infinite;
+                    }
+
+                    .yellowcircle {
+                        position: absolute;
+                        bottom: 0px;
+                        right: -50px;
+
+                    }
+
+                    .head-text {
+                        position: absolute;
+                        text-align: center;
+                        top: 40%;
+                        left: 72%;
+                        transform: translate(-50%, -50%);
+                        color: #fff;
+
+                        h3 {
+                            font-size: 35px;
+                        }
+
+                        p {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .col-sm-10 {
+                    padding: 3% 0px 0px 9%;
+                    font-size: 18px;
+                    line-height: 1.6rem;
+                    word-spacing: 0.2rem;
+
+                    .coding-concept-text {
+                        p {}
+                    }
+
+                    .row {
+                        margin-top: 2%;
+
+                        .sub-concept {
+                            font-size: 1.4rem;
+                            color: #068fb1;
+                            text-align: left;
+                        }
+
+                        .row {
+                            margin-top: 2%;
+
+                            .Courses-box1 {
+
+                                .Courses-par1 {
+                                    text-transform: capitalize;
+
+                                }
+
+                                .Courses-par2 {
+                                    text-align: center;
+                                }
+
+                            }
+
+                            .Courses-box1:not(.Courses-box2)::after {
+                                content: " ";
+                                position: absolute;
+                                height: 57px;
+                                color: #068fb1;
+                                border: 2px solid;
+                                top: 0px;
+                                right: 0px;
+                                margin: 0px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //table
+    .coding-table {
+        background-color: #ebf6f8;
+
+        .container-fluid {
+
+
+            .row {
+                .table {
+
+                    thead {
+                        .head-row {
+                            padding: 20px;
+
+                            .table-head {
+                                background: #ebf6f8;
+                                color: #d93c55;
+                                font-size: 40px;
+                                font-weight: 300;
+                                border: 1px solid #ebf6f8;
+                                padding: 15px;
+
+                            }
+                        }
+
+                        tr {
+                            background-color: #d93c55;
+                            color: #fff;
+                            text-transform: capitalize;
+                            font-weight: 300;
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            text-transform: capitalize;
+                            font-weight: 300;
+                        }
+                    }
+
+                    tfoot {
+                        tr {
+
+                            font-weight: 700;
+
+                            td {
+                                border: 1px solid #ebf6f8;
+                                padding: 20px;
+
+                                span {
+                                    color: #d93358;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //features
+    .section-features {
+        .container {
+            .row1 {
+                .features-heading {
+                    margin-top: 5rem;
+
+                    h4 {
+                        color: #d93358;
+                    }
+
+                    p {
+                        margin-top: 2rem;
+                        font-size: 20px;
+                        line-height: 1.8rem;
+                        text-align: justify;
+                    }
+
+                }
+            }
+
+            .row2 {
+                //                margin: 30px auto;
+
+                .features-logo {
+
+                    margin: 40px 0px 0px 0px;
+
+                    img {
+                        display: inline-block;
+                    }
+
+
+                    p {
+                        margin-top: 1.4rem;
+                        font-size: 1.4rem;
+                        font-weight: 300;
+                        line-height: 1.8rem;
+                        color: #1493D5;
+                    }
+                }
+            }
+
+            .row3 {
+                //                margin: 30px auto;
+
+                .inner-row3 {
+
+
+                    .features-logo {
+                        margin: 40px 0px 0px 0px;
+
+                        img {
+                            display: inline-block;
+                        }
+
+                        p {
+                            margin-top: 1.4rem;
+                            font-size: 1.4rem;
+                            font-weight: 300;
+                            line-height: 1.8rem;
+                            color: #1493D5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //why hackberry
+    .why-hackberry {
+        .row {
+            .col-pad {
+                padding: 0px;
+
+                .why-hack-block {
+                    background-image: url(../img/why-hack-backgound.png);
+                    height: 320px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    width: 100%;
+
+                    h3 {
+                        position: absolute;
+                        top: 25%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 2.2rem;
+                        font-weight: 500;
+                        color: #fff;
+                        letter-spacing: 0.1rem;
+                    }
+
+                    p {
+                        position: absolute;
+                        top: 60%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-weight: 300;
+                        font-size: 1.2rem;
+                        width: 80%;
+                        line-height: 1.6rem;
+                        color: #fff;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    //hackberry contact
+    .hackberry-contact {
+        .row1 {
+            margin: 6%;
+
+            .cloud2 {
+                position: relative;
+
+                .bigcloud2 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                }
+
+                .smallcloud2 {
+                    position: absolute;
+                    top: -20px;
+                    left: 35%;
+                    transform: translate(0%, -50%);
+                    animation-name: smallcloud2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+                }
+
+                .smalloctopus2 {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(150%, -40%);
+                    animation-name: smalloctopus2;
+                    animation-duration: 5s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                    animation-timing-function: linear;
+
+
+                }
+
+                .cloudtext2 {
+                    font-family: 'Montserrat', sans-serif;
+                    position: absolute;
+                    top: 20px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 3;
+
+                    p {
+                        font-size: 30px;
+                        color: #f05067;
+                        font-weight: 900;
+                        margin: 0;
+                        text-transform: capitalize;
+
+
+                    }
+                }
+            }
+        }
+
+        .row2 {
+
+            .inner-row2 {
+                margin-top: 2rem;
+
+                a {
+                    color: black;
+                    font-weight: 300;
+                    font-size: 1.3rem;
+
+                    span {
+                        font-size: 1.8rem;
+                        padding-right: 5px;
+                        color: #f05067;
+                    }
+                }
+            }
+        }
+
+        .row3 {
+            margin-top: 5%;
+
+            .form-group {
+                label {
+                    font-size: 18px;
+                    color: #000;
+                    font-weight: 300;
+                }
+
+
+                .form-control {
+                    border-bottom: 1px solid #f05067;
+                }
+
+                .form-control:focus {
+
+                    box-shadow: 0px 1px 10px #f05067;
+                }
+
+            }
+
+            .submit-btn {
+                position: relative;
+
+                btn-img:hover {
+                    box-shadow: 0px 20px 100px #000;
+                }
+
+                p {
+                    position: absolute;
+                    top: 35%;
+                    color: #fff;
+                    left: 25px;
+                    font-size: 16px;
+                    font-weight: 300px;
+                    font-size: 300;
+                    font-weight: 300;
+
+                }
+
+            }
+
+
+        }
+
+    }
+
+    //footer
+
+
+}
+
+@keyframes octopus {
+
+    0% {
+        transform: translate(-50%, -70%);
+    }
+
+    100% {
+        transform: translate(-50%, 10%);
+    }
+
+}
+
+@keyframes smallcloud1 {
+
+    0% {
+        transform: translate(-150%, -20%);
+    }
+
+    100% {
+        transform: translate(-80%, -25%);
+    }
+
+}
+
+@keyframes smallcloud2 {
+
+    0% {
+        transform: translate(0%, -50%);
+    }
+
+    100% {
+        transform: translate(50%, -50%);
+    }
+
+}
+
+@keyframes smalloctopus1 {
+
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        transform: translate(-50%, -100%);
+    }
+}
+
+@keyframes smalloctopus2 {
+
+    0% {
+        transform: translate(150%, -40%);
+    }
+
+    100% {
+        transform: translate(150%, -70%);
+    }
+
+}
+
+@keyframes greenrotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+
+}

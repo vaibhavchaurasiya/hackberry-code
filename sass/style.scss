@@ -1,0 +1,92 @@
+
+	@charset "UTF-8";
+
+/*	==========================================================================
+	#Import Setting
+		*modules
+			*functions
+			*variables
+			*mixins
+			*reset
+			*base
+		*partials
+			*header
+			*footer
+	#Demo Code
+	========================================================================== */
+
+	@import "modules/functions";
+	@import "modules/variables";
+	@import "modules/mixins";
+	@import "modules/reset";
+	@import "modules/base";
+
+	@import "partials/header";
+	@import "partials/footer";
+    @import "partials/index";
+
+    @import "vendor/materialize_sass/materialize";
+/*	==========================================================================
+		#Demo Code
+	========================================================================== */
+
+
+	.caption{
+		@include mv-border;
+		height: 500px;
+	}
+
+	.valign{
+		text-align: center;
+	}
+
+//	.h1{
+//		color: yellow;
+//	}
+
+	.ivc{
+		@include mv-primary-heading();
+	}
+
+	/* Demo To Create KeyFrame */
+	@include keyframes(spin) {
+		0% {
+			@include mv-transform(rotate, 0deg);
+		}
+		100% {
+			@include mv-transform(rotate, 360deg);
+		}
+	}
+
+	/* Call Animation */
+	p.demo{
+        @include animation(spin 0.65s infinite linear);
+	}
+
+	/* Border Radius */
+	p.demo{
+        @include border-bottom-radius;
+	}
+
+	/* Placeholder-color first on the browser-prefix */
+	input{
+		@include mv-placeholder-color(red);
+	}
+
+	/* Demo code for media query */
+
+	.media{
+		@include mv-media(max, 991px){
+			color: green;
+		};
+		@include mv-media(min, 992px){
+			color: greenyellow;
+			display: block;
+		};
+		@include mv-media(420px, 450px){
+			color: red;
+		};
+		color: red;
+	}
+
+	

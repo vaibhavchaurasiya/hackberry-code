@@ -1,0 +1,24 @@
+footer {
+    .hackberry-footer {
+        padding-top: 10%;
+
+        .full-footer {
+            padding: 0;
+
+            .footer-bg {
+
+                background-image:
+                    url(../img/footer-background.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+
+                .footer-octopus {
+                    position: relative;
+                    left: 60%;
+                    top: -130px;
+                }
+            }
+        }
+    }
+}

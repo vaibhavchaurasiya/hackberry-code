@@ -1,0 +1,143 @@
+/*  ==========================================================================
+    Table of Contents For Variables:
+        *Button
+        *Action Bar
+        *Logo Width
+        *Navigation Header
+        *Sale Badges
+        *Sizing Variables
+        *Typography Variables
+        *Z-Index
+        *Site Header
+        *Forms
+        *Misc
+        *Drawers
+        *Hero
+        *Collection Grid
+    =========================================================================*/
+
+
+/*  =========================== #Color Variables ============================*/
+
+    //Backgrounds
+    $color-body: #e2e2e2;
+    $color-footer: #333333;
+
+    // Button colors
+    $color-btn-primary: #333;
+    $color-btn-primary-hover: #333;
+    $color-btn-primary-active: #333;
+    $color-btn-primary-text: #333;
+
+    // Text link colors
+    $color-link: #333;
+    $opacity-link-hover: 0.7;
+
+    // Text colors
+    $color-body-text: #333;
+    $color-headings-text: #333;
+    $color-footer-text: #333;
+
+    // Border colors
+    $color-border: #333;
+
+    // Form colors
+    $color-form: #f4f4f4;
+
+    // Helper colors for form error states
+    $color-disabled: darken($color-form, 8%);
+    $color-border-disabled: #000;
+    $color-error: #b62b2b;
+    $color-error-bg: #fff0f0;
+    $color-success: #56ad6a;
+    $color-success-bg: #ecfef0;
+
+/*  =========================== #Action Bar ================================*/
+    
+    $color-action-bar-bg: #ddd;
+    $color-action-bar-text: #ddd;
+    $color-action-bar-active: #ddd;
+    $height-action-bar-active-indicator: 2px;
+    $height-action-bar: 50px;
+
+/*  =========================== #Logo Width ================================*/
+
+    $width-logo: 25px;
+    $max-width-logo: 125px;
+
+/*  =========================== #Navigation Header =========================*/
+
+    $color-navigation-bg: #000;
+    $color-navigation-text: #999;
+
+/*  =========================== #Sale Badges ===============================*/
+
+/*  =========================== #Sizing Variables ==========================*/
+
+    $width-site: 780px;
+    $width-site-wide: 1200px;
+    $gutter-site: 20px;
+    $gutter-heading: 30px;
+    $height-space: 50px;
+    $height-small-space: 25px;
+
+/*  =========================== #Typography Variables ======================*/
+
+    $font-stack-header: "";
+    $font-weight-header: "";
+    $font-size-header: "";
+
+    $font-size-button: "";
+    $font-size-button-mobile: $font-size-button - 1px;
+
+    $font-weight-normal: 400;
+    $font-weight-bold: 700;
+
+    $font-stack-body: "";
+    $font-size-base: "";
+
+/*  =========================== #Z-Index ===================================*/
+
+    $z-index-dropdown : 2;
+    $z-index-site-header: 7;
+    $z-index-drawer: 100;
+    $z-index-action-bar: 5;
+    $z-index-search-bar: 8;
+    $z-index-hero-slide: 4;
+    $z-index-hero-logo: 5;
+
+/*  =========================== #Site Header ===============================*/
+
+    $height-site-header: 65px;
+    $transition-site-header: top 0.15s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+/*  =========================== #Forms =====================================*/
+
+    $padding-form: 12px;
+
+/*  =========================== #Misc ======================================*/
+
+    $radius: 2px;
+    $important: !important;
+
+/*  =========================== #Drawers ===================================*/
+
+    $drawer-nav-width: 300px;
+    $drawer-cart-width: 300px;
+    $drawer-header-height: $height-site-header;
+    $drawer-cart-footer-height: 130px; // default, overwritten by JS
+    $drawer-transition: all 0.35s cubic-bezier(0.29, 0.63, 0.44, 1);
+    $color-drawers: "";
+    $color-drawers-border: "";
+    $color-drawer-inputs: "";
+    $color-drawer-input-text: "";
+    $color-drawers-text: "";
+
+/*  =========================== #Hero ======================================*/
+
+/*  =========================== #Collection Grid ===========================*/
+
+    $collection-grid-height-widescreen: 600px;
+    $collection-grid-height-desktop: 400px;
+    $collection-grid-height-tablet: 400px;
+    $collection-grid-height-mobile: 250px;
