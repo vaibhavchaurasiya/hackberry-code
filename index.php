@@ -45,7 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-xs-12">
-                        <div class="cloud1">
+                        <div class="cloud1 demo0">
                             <div class="bigcloud1">
                                 <img class="bigcloud-img1 img-responsive" src="dist/img/big-cloud.png">
                             </div>
